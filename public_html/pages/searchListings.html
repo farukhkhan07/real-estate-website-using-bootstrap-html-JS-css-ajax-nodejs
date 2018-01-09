@@ -1,0 +1,107 @@
+<div class="page-head"> 
+    <div class="container">
+        <div class="row">
+            <div class="page-head-content">
+                <h1 class="page-title">- Search Result - </h1>               
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-md-12 panel panel-default sidebar-menu"> 
+            <div class="panel-heading">
+                <h3 class="panel-title">Search</h3>
+            </div>
+            <div class="panel-body search-widget">
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-sm-4 col-md-3">
+                                <input type="text" class="form-control" id="searchLocation" name="location"  placeholder="Location">
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <input type="text" class="form-control" id="city" name="city"  placeholder="City">
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <input type="number" class="form-control" min="0" id="searchBeds" name="searchBeds"  placeholder="Beds">
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <input type="number" class="form-control" min="0" id="searchBaths" name="searchBaths"  placeholder="Baths">
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 10px;"> 
+                            <div class="col-sm-4 col-sm-4"> 
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Sort</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 10px;"> 
+                            <div class="col-sm-4 col-md-4">
+                                <div class="page-subheader sorting pl0">
+                                    <ul class="sort-by-list">
+                                        <li class="active">
+                                            <a id="byDate" href="javascript:void(0);" onclick="$(this).attr('data-order') === 'ASC' ? $(this).attr('data-order', 'DESC')  : ($(this).attr('data-order') === 'DESC' ?  $(this).attr('data-order', 'ASC') : $(this).attr('data-order', 'DESC')); $($(this)[0].childNodes[1]).toggleClass('fa-sort-amount-desc fa-sort-amount-asc');" class="order_by_date" data-orderby="property_date" data-order="ASC">
+                                                Property Date <i class="fa fa-sort-amount-asc"></i>
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <a  id = "byPrice" href="javascript:void(0);" onclick="$(this).attr('data-order') === 'ASC' ? $(this).attr('data-order', 'DESC')  : ($(this).attr('data-order') === 'DESC' ?  $(this).attr('data-order', 'ASC') : $(this).attr('data-order', 'DESC')); $($(this)[0].childNodes[1]).toggleClass('fa-sort-numeric-desc fa-sort-numeric-asc')" class="order_by_price" data-orderby="property_price" data-order="ASC">
+                                                Property Price <i class="fa fa-sort-numeric-asc"></i>
+                                                <!--     <button type="button" class="btnSortP">Sort By Price  </button> -->
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-8 col-md-8 ">
+                                
+                                <button class="btn largesearch-btn pull-right" id="resetFilter"><i class="fa fa-times"></i>&nbsp;Reset</button>
+                                <button class="btn largesearch-btn pull-right" id="ListingPageSearchBtn"><i class="fa fa-search"></i>&nbsp;Search</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row appendHere"> 
+
+    </div>
+</div>
+<div style="display: none;"> 
+    <div class="col-sm-6 col-md-4 "  id="searchListingTemplate" style="padding: 15px;">
+        <div class="box-two proerty-item materialCard hoverMaterialCard">
+            <div class="item-thumb">
+                <a id="searchListingImg"></a>
+            </div>
+            <div class="item-entry overflow">
+                <h5 style="padding:5px;"> <b> Listing ID: </b> <p id="listingId" style="display:inline;"> </p> </h5>
+                <h5  style="padding:5px;   width: 100%;  white-space: nowrap;  overflow: hidden; text-overflow: ellipsis;"> <b id="listingTitle"> </b> </h5>      
+                <div class="dot-hr"></div>
+                <div style="padding: 5px;"> 
+                    <div class="row"> 
+                        <div class="col-md-6" style="display:inline-flex;"> 
+                            <p> <b> Area : </b> <p id="listingArea" style="margin:auto;">  </p>
+                        </div>
+                        <div class="col-md-6 price" style="display:inline-flex;"> 
+                          <p> <b> Price : </b>  <p id="listingPrice" style="margin:auto;"> </p> </p>
+                        </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="col-md-6" style="display:inline-flex;"> 
+                            <p> <b> City : </b> <p id="listingCity" style="margin:auto;">  </p>
+                        </div>
+                    </div>
+                   <p> <b> Description : </b> </p> 
+                     <p id="listingDescription" style = "  width: 250px;  white-space: nowrap; overflow: hidden;  text-overflow: ellipsis;"> </p>
+                    <div class="property-icon">
+                        <img src="./images/icon/bed.png"><span id="searchListingBeds" style="padding: 5px;">(5)|</span>
+                        <img src="./images/icon/shawer.png"><span id="searchListingBaths" style="padding: 5px;">(2)</span>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
